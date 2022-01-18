@@ -14,4 +14,4 @@ Just add this code on your site:
 &lt;script src=&quot;https://papayaplayer.com/sdk.js&quot; charset=&quot;utf-8&quot; async&gt;&lt;/script&gt;
 &lt;video height=&quot;height&quot; width=&quot;width&quot; src=&quot;magnet link&quot; controls&gt;&lt;/video&gt;
 </pre>
-Required fields: "height", "width", "link" and magic 
+Required fields: "height", "width", "link" and magic will happen.
