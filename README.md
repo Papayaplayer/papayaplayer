@@ -9,14 +9,14 @@ Add Papayaplayer on your site for online torrent streaming
 </ul>
 
 <h1>How to use</h1>
-Just add papaya.js, papaya.js.map on your site and add code:
+Just add on your site code:
 <pre>
 &lt;head&gt;
-&lt;link href="/papaya.js" rel="preload" as="script"&gt;
+&lt;link href="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js" rel="preload" as="script"&gt;
 &lt;/head&gt;
 &lt;body&gt;
 &lt;div id="papaya" data-height="height" data-width="width" data-link="link"&gt;&lt;/div&gt;
-&lt;script src="/papaya.js"&gt;&lt;/script&gt;
+&lt;script src="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 </pre>
 Required fields: "height", "width", "link" and magic will happen.
