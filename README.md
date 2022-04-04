@@ -16,7 +16,8 @@ Don't worry, the player is designed so that if a separate server is blocked, the
 
 <h1>How to use</h1>
 You have lists of torrents and a “download torrent" button. You can simply add a “play” button next to it:
-<p>![alt text](https://drive.google.com/file/d/1YFmEYJdUWrjr2QBIxPEtoQY9YQgh-xDS/view?usp=sharing)</p>
+
+[Image alt](https://github.com/Papayaplayer/papayaplayer/blob/b37017fcc58379a34de14b8c2bf6502a7d667ee4/First%20variants2%20eng.png?raw=true)
 
 That code allows you to run torrent-files in the player through our service:
 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">head</span>&gt;</span>
