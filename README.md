@@ -16,7 +16,7 @@ Don't worry, the player is designed so that if a separate server is blocked, the
 
 <h1>How to use</h1>
 You have lists of torrents and a “download torrent" button. You can simply add a “play” button next to it:
-![First variants2 eng](https://user-images.githubusercontent.com/97943999/161523163-b4646ad7-31e7-4209-89db-57d45051f5fd.png)
+![alt text](https://drive.google.com/drive/folders/1YvoahZr6pTjpscTgaBuLznhrt2SfBI2B?usp=sharing)
 
 That code allows you to run torrent-files in the player through our service:
 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">head</span>&gt;</span>
