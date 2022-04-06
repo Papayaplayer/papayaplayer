@@ -1,0 +1,36 @@
+<html>
+<head>
+<itle> PAPAYA PLAYER </title>
+<link href="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js" rel="preload" as="script">
+</head>
+<body>
+
+<form method="GET" action="">
+<p> Magnet Link : <input type="text" name="tid">
+<button type="submit" id="submit">Stream</button>
+</p>
+</form>
+
+<p id="myCustomPlayer"></p>
+
+<script>
+var start = "<div id=\"papaya\" data-height=\"100%\" data-width=\"100%\" data-link=\"";
+var tid = location.search.split('tid=')[1];
+let magnetlink = decodeURIComponent(tid)
+var end = "\"></div>";
+var code = unescape(start + magnetlink + end);
+
+// console.log(tid);
+// console.log(magnetlink);
+// console.log(code);
+
+document.getElementById('myCustomPlayer').innerHTML = code;
+// document.write(code);
+</script>
+
+<!-- <div id="papaya" data-height="100%" data-width="100%" data-link=""></div> -->
+
+<script src="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js"></script>
+
+</body>
+</html>
