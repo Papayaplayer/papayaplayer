@@ -1,36 +1,116 @@
 <html>
-<head>
-<itle> PAPAYA PLAYER </title>
-<link href="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js" rel="preload" as="script">
-</head>
+
+	<head>
+		<title> PAPAYA PLAYER </title>
+		<link href="papaya.js" rel="preload" as="script">
+    <!-- <link href="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js" rel="preload" as="script"> -->
+	</head>
+
 <body>
 
-<form method="GET" action="">
-<p> Magnet Link : <input type="text" name="tid">
-<button type="submit" id="submit">Stream</button>
-</p>
-</form>
+	<form method="GET" action="">
+		Magnet Link : <input type="text" placeholder="magnet:?xt=urn:btih:" name="tid">
+		<button type="submit" id="submit">Stream</button>
+		Sample Videos :
+		<a href="?tid=magnet:?xt=urn:btih:3WBFL3G4PSSV7MF37AJSHWDQMLNR63I4"> Big Buck Bunny </a> - 
+		<a href="?tid=magnet:?xt=urn:btih:ZHQVOY7XELZD5GFCTXWN7LRUDOMNKMCW"> Cosmos Laundromat </a> - 
+		<a href="?tid=magnet:?xt=urn:btih:BCW2LJ5GDA5K4HQJ3AY56Z2I2VTASWQQ"> Sintel </a> - 
+		<a href="?tid=magnet:?xt=urn:btih:ECOIEJVSTGZQRPVPFOONH62JEEW32E7M"> Tears of Steel </a> -
+	</form>
 
-<p id="myCustomPlayer"></p>
+	<hr> <br/>
 
-<script>
-var start = "<div id=\"papaya\" data-height=\"100%\" data-width=\"100%\" data-link=\"";
-var tid = location.search.split('tid=')[1];
-let magnetlink = decodeURIComponent(tid)
-var end = "\"></div>";
-var code = unescape(start + magnetlink + end);
+	<div id="myCustomPlayerStatus"></div>
+	<div id="myCustomPlayer"></div>
 
-// console.log(tid);
-// console.log(magnetlink);
-// console.log(code);
+	<script>
 
-document.getElementById('myCustomPlayer').innerHTML = code;
-// document.write(code);
-</script>
+		// This should follow https://en.wikipedia.org/wiki/Magnet_URI_scheme
+		// tr is Tracker URL; used to obtain resources for BitTorrent downloads without a need for DHT support.	 
+		var PublicTrackerList = "&tr=http://explodie.org:6969/announce&tr=udp://explodie.org:6969/announce&tr=http://tracker.opentrackr.org:1337/announce&tr=udp://tracker.opentrackr.org:1337/announce&tr=https://opentracker.i2p.rocks/announce&tr=udp://opentracker.i2p.rocks:6969/announce&tr=udp://open.stealth.si:80/announce&tr=udp://open.tracker.cl:1337/announce&tr=udp://opentor.org:2710/announce&tr=udp://tracker.internetwarriors.net:1337/announce&tr=udp://tracker.leech.ie:1337/announce&tr=udp://tracker.moeking.me:6969/announce &tr=udp://tracker.openbittorrent.com:6969 &tr=udp://tracker.tiny-vps.com:6969/announce&tr=udp://tracker.torrent.eu.org:451&tr=wss://tracker.btorrent.xyz&tr=wss://tracker.openwebtorrent.com";
 
-<!-- <div id="papaya" data-height="100%" data-width="100%" data-link=""></div> -->
+		// tid should start with magnet:?xt=urn:btih:
+		// Grabbing values from URI
+		var tid = location.search.split('tid=')[1];
+		var STTS = location.search.split('SS=')[1];
+		var LNG = location.search.split('Lang=')[1];
+		var HGHT = location.search.split('Height=')[1];
+		var WDTH = location.search.split('Width=')[1];
+		
+		if ( STTS ) {
+			var STTS = "False";
+		}
+		else {
+			var STTS = "True";
+		}
 
-<script src="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js"></script>
+		if ( LNG ) {
+			var LNG = "en";
+		}
+		else {
+			var LNG = "ru";
+		}
 
+		if ( HGHT ) {
+			var HGHT = HGHT;
+		}
+		else {
+			var HGHT = "100%";
+		}
+
+		if ( WDTH ) {
+			var WDTH = WDTH;
+		}
+		else {
+			var WDTH = "100%";
+		}
+
+		// Show this message if tid is not set or undefined
+		var tidEmpty = "<p> Please enter a magnet link select from the sample videos </p>";
+
+		// vars Start
+		var divOpen = "<div id=\"papaya\" ";
+
+		// Boolean True or False
+		var showStatus = "data-status=\"" + STTS + "\" ";
+
+		// en || ru
+		var SetLang = "data-locale=\"" + LNG + "\" ";
+		
+		// Height and Width in % or px
+		var setHeight = "data-height=\"" + HGHT + "\" ";
+		var setWidth = "data-width=\"" + WDTH + "\" ";
+		
+		// Returns decoded version of the given encoded URI
+		var LNK = decodeURIComponent(tid);
+
+		// insert magnet link here
+		var setLink = "data-link=\"" + LNK + "\" ";
+
+		// Closing Tag
+		var divEnd = "\"></div>";
+
+		// Combining code
+		var code = unescape( divOpen + showStatus + SetLang + setHeight + setWidth + setLink + divEnd );
+
+		// console.log(tid);
+		// console.log(magnetLink);
+		console.log(code);
+
+		if (( tid == "" ) || ( tid == undefined )) {
+			document.getElementById('myCustomPlayerStatus').innerHTML = tidEmpty;
+		}
+		else {
+			document.getElementById('myCustomPlayer').innerHTML = code;
+			// document.write(code);
+		}
+
+	</script>
+
+	<!-- <div id="papaya" data-status="true" data-locale="ru|en" data-height="height" data-width="width" data-link="link"></div> -->
+
+	<script src="papaya.js"></script>
+  <!-- <script src="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js"></script> -->
+  
 </body>
 </html>
