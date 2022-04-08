@@ -28,4 +28,8 @@ That code allows you to run torrent-files in the player through our service:
 <span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">body</span>&gt;</span></span></pre>
 
-<p><b><u>Important: all parameters (height, width, link) are required!</u></b></p>
+<h1>Important</h1>
+<ul>
+	<li>All parameters (height, width, link) are required!</li>
+	<li>Please, use all files from release catalog. Then, when you change the server, the service will continue to work.</li>
+</ul>
