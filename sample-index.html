@@ -1,10 +1,23 @@
 <html>
 
 	<head>
-		<title> PAPAYA PLAYER </title>
-		<link href="papaya.js" rel="preload" as="script">
-    <!-- <link href="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js" rel="preload" as="script"> -->
+		<title> PAPAYA PLAYER </title>	
+		<link href="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js" rel="preload" as="script">
 	</head>
+
+	<style>
+		html {
+		background-color: black;
+		color: white;
+		font-family: "Audiowide", sans-serif;
+		}
+		a,
+		a:hover,
+		a:active,
+		a:visited {
+		color: red;
+		}
+		</style>
 
 <body>
 
@@ -30,71 +43,13 @@
 		var PublicTrackerList = "&tr=http://explodie.org:6969/announce&tr=udp://explodie.org:6969/announce&tr=http://tracker.opentrackr.org:1337/announce&tr=udp://tracker.opentrackr.org:1337/announce&tr=https://opentracker.i2p.rocks/announce&tr=udp://opentracker.i2p.rocks:6969/announce&tr=udp://open.stealth.si:80/announce&tr=udp://open.tracker.cl:1337/announce&tr=udp://opentor.org:2710/announce&tr=udp://tracker.internetwarriors.net:1337/announce&tr=udp://tracker.leech.ie:1337/announce&tr=udp://tracker.moeking.me:6969/announce &tr=udp://tracker.openbittorrent.com:6969 &tr=udp://tracker.tiny-vps.com:6969/announce&tr=udp://tracker.torrent.eu.org:451&tr=wss://tracker.btorrent.xyz&tr=wss://tracker.openwebtorrent.com";
 
 		// tid should start with magnet:?xt=urn:btih:
-		// Grabbing values from URI
 		var tid = location.search.split('tid=')[1];
-		var STTS = location.search.split('SS=')[1];
-		var LNG = location.search.split('Lang=')[1];
-		var HGHT = location.search.split('Height=')[1];
-		var WDTH = location.search.split('Width=')[1];
-		
-		if ( STTS ) {
-			var STTS = "False";
-		}
-		else {
-			var STTS = "True";
-		}
-
-		if ( LNG ) {
-			var LNG = "en";
-		}
-		else {
-			var LNG = "ru";
-		}
-
-		if ( HGHT ) {
-			var HGHT = HGHT;
-		}
-		else {
-			var HGHT = "100%";
-		}
-
-		if ( WDTH ) {
-			var WDTH = WDTH;
-		}
-		else {
-			var WDTH = "100%";
-		}
-
-		// Show this message if tid is not set or undefined
 		var tidEmpty = "<p> Please enter a magnet link select from the sample videos </p>";
-
-		// vars Start
-		var divOpen = "<div id=\"papaya\" ";
-
-		// Boolean True or False
-		var showStatus = "data-status=\"" + STTS + "\" ";
-
-		// en || ru
-		var SetLang = "data-locale=\"" + LNG + "\" ";
-		
-		// Height and Width in % or px
-		var setHeight = "data-height=\"" + HGHT + "\" ";
-		var setWidth = "data-width=\"" + WDTH + "\" ";
-		
-		// Returns decoded version of the given encoded URI
+		var divOpen = "<center> <div id=\"papaya\" ";
 		var LNK = decodeURIComponent(tid);
-
-		// insert magnet link here
-		var setLink = "data-link=\"" + LNK + "\" ";
-
-		// Closing Tag
-		var divEnd = "\"></div>";
-
-		// Combining code
-		var code = unescape( divOpen + showStatus + SetLang + setHeight + setWidth + setLink + divEnd );
-
-		// console.log(tid);
-		// console.log(magnetLink);
+		var setLink = "data-link=\"" + LNK+ "\" ";
+		var divEnd = "data-status=\"true\" data-locale=\"ru\" data-height=\"768\" data-width=\"1280\"> </div> </center>";
+		var code = unescape( divOpen + setLink + divEnd );
 		console.log(code);
 
 		if (( tid == "" ) || ( tid == undefined )) {
@@ -102,15 +57,13 @@
 		}
 		else {
 			document.getElementById('myCustomPlayer').innerHTML = code;
-			// document.write(code);
 		}
 
 	</script>
 
 	<!-- <div id="papaya" data-status="true" data-locale="ru|en" data-height="height" data-width="width" data-link="link"></div> -->
 
-	<script src="papaya.js"></script>
-  <!-- <script src="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js"></script> -->
+	<script src="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js"></script>
   
 </body>
 </html>
