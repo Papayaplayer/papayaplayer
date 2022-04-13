@@ -1,69 +1,83 @@
 <html>
+    <head>
 
-	<head>
-		<title> PAPAYA PLAYER </title>	
-		<link href="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js" rel="preload" as="script">
-	</head>
+        <title>Papaya Player</title>
 
-	<style>
-		html {
-		background-color: black;
-		color: white;
-		font-family: "Audiowide", sans-serif;
-		}
-		a,
-		a:hover,
-		a:active,
-		a:visited {
-		color: red;
-		}
-		</style>
+        <style>
+            html { background-color:#000000; color:#ffffff; font-family: 'Roboto', sans-serif;}
+            a, a:hover, a:active, a:visited { color: #ff0000; }
+            /* hide scrollbar but allow scrolling */
+            div { -ms-overflow-style: none; /* for Internet Explorer, Edge */ scrollbar-width: none; /* for Firefox */ overflow-y: scroll; }
+            div::-webkit-scrollbar { display: none; /* for Chrome, Safari, and Opera */ }
+            #header, #footer, #content { position:absolute; right:0; left:0; color:#ffffff; }
+            #header { height:100px; top:0; background: linear-gradient(180deg, #101010 0%, #000000 75%); }
+            #footer { height:100px; bottom:0; background: linear-gradient(180deg, #000000 0%, #101010 100%); text-align:right; }
+            #content { top:100px; bottom:100px; background:#000000; color:#ffffff; overflow:hidden; }
+            #content_inner { height:100%; overflow-x: hidden; }
+        </style>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+        <link href="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js" rel="preload" as="script">
 
-<body>
+    </head>
 
-	<form method="GET" action="">
-		Magnet Link : <input type="text" placeholder="magnet:?xt=urn:btih:" name="tid">
-		<button type="submit" id="submit">Stream</button>
-		Sample Videos :
-		<a href="?tid=magnet:?xt=urn:btih:3WBFL3G4PSSV7MF37AJSHWDQMLNR63I4"> Big Buck Bunny </a> - 
-		<a href="?tid=magnet:?xt=urn:btih:ZHQVOY7XELZD5GFCTXWN7LRUDOMNKMCW"> Cosmos Laundromat </a> - 
-		<a href="?tid=magnet:?xt=urn:btih:BCW2LJ5GDA5K4HQJ3AY56Z2I2VTASWQQ"> Sintel </a> - 
-		<a href="?tid=magnet:?xt=urn:btih:ECOIEJVSTGZQRPVPFOONH62JEEW32E7M"> Tears of Steel </a> -
-	</form>
+    <body>
 
-	<hr> <br/>
+        <div id="header">
+            <p><form method="GET" action="">
+                Magnet Link : <input type="text" placeholder="magnet:?xt=urn:btih:" name="tid">
+                <button type="submit" id="submit">Stream</button>
+                Sample Videos :
+                <a href="?tid=magnet:?xt=urn:btih:3WBFL3G4PSSV7MF37AJSHWDQMLNR63I4"> Big Buck Bunny </a> - 
+                <a href="?tid=magnet:?xt=urn:btih:ZHQVOY7XELZD5GFCTXWN7LRUDOMNKMCW"> Cosmos Laundromat </a> - 
+                <a href="?tid=magnet:?xt=urn:btih:BCW2LJ5GDA5K4HQJ3AY56Z2I2VTASWQQ"> Sintel </a> - 
+                <a href="?tid=magnet:?xt=urn:btih:ECOIEJVSTGZQRPVPFOONH62JEEW32E7M"> Tears of Steel </a> -
+                PapayaPlayer may take up to 1 minute to show up and Playback/Download speed may vary depending on total current seeders and peers.<br/><br/>
+                <div id="myCustomPlayerStatus"></div>
+            </form></p>
+        </div>
 
-	<div id="myCustomPlayerStatus"></div>
-	<div id="myCustomPlayer"></div>
+        <div id="content">
+            <div id="content_inner">
+                <div>&nbsp;</div>
+	            <div id="myCustomPlayer"></div>
+                <div>&nbsp;</div>
+                 <!-- <div id="papaya" data-status="true" data-locale="ru|en" data-height="height" data-width="width" data-link="link"></div> -->
+            </div>
+        </div>
+        
+        <div id="footer">
+            <p><div>&nbsp;</div>
+            This site does not store any files on our server, we only stream the media which is cached on 3rd party services.
+            <br/>How to Download: Right click on the video once it starts playing, then select <a>"Save video as"</a>.
+            <br/><a href="https://github.com/Papayaplayer/papayaplayer">Github Source</a> - <a href="https://papayaplayer.com/">PapayaPlayer.com</a></p>
+        </div>
 
-	<script>
-
-		// This should follow https://en.wikipedia.org/wiki/Magnet_URI_scheme
-		// tr is Tracker URL; used to obtain resources for BitTorrent downloads without a need for DHT support.	 
-		var PublicTrackerList = "&tr=http://explodie.org:6969/announce&tr=udp://explodie.org:6969/announce&tr=http://tracker.opentrackr.org:1337/announce&tr=udp://tracker.opentrackr.org:1337/announce&tr=https://opentracker.i2p.rocks/announce&tr=udp://opentracker.i2p.rocks:6969/announce&tr=udp://open.stealth.si:80/announce&tr=udp://open.tracker.cl:1337/announce&tr=udp://opentor.org:2710/announce&tr=udp://tracker.internetwarriors.net:1337/announce&tr=udp://tracker.leech.ie:1337/announce&tr=udp://tracker.moeking.me:6969/announce &tr=udp://tracker.openbittorrent.com:6969 &tr=udp://tracker.tiny-vps.com:6969/announce&tr=udp://tracker.torrent.eu.org:451&tr=wss://tracker.btorrent.xyz&tr=wss://tracker.openwebtorrent.com";
-
-		// tid should start with magnet:?xt=urn:btih:
-		var tid = location.search.split('tid=')[1];
-		var tidEmpty = "<p> Please enter a magnet link select from the sample videos </p>";
-		var divOpen = "<center> <div id=\"papaya\" ";
-		var LNK = decodeURIComponent(tid);
-		var setLink = "data-link=\"" + LNK+ "\" ";
-		var divEnd = "data-status=\"true\" data-locale=\"ru\" data-height=\"768\" data-width=\"1280\"> </div> </center>";
-		var code = unescape( divOpen + setLink + divEnd );
-		console.log(code);
-
-		if (( tid == "" ) || ( tid == undefined )) {
-			document.getElementById('myCustomPlayerStatus').innerHTML = tidEmpty;
-		}
-		else {
-			document.getElementById('myCustomPlayer').innerHTML = code;
-		}
-
-	</script>
-
-	<!-- <div id="papaya" data-status="true" data-locale="ru|en" data-height="height" data-width="width" data-link="link"></div> -->
-
-	<script src="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js"></script>
+        <script>
+            // This should follow https://en.wikipedia.org/wiki/Magnet_URI_scheme
+            // tr is Tracker URL; used to obtain resources for BitTorrent downloads without a need for DHT support.	 
+            var PublicTrackerList = "&tr=http://explodie.org:6969/announce&tr=udp://explodie.org:6969/announce&tr=http://tracker.opentrackr.org:1337/announce&tr=udp://tracker.opentrackr.org:1337/announce&tr=https://opentracker.i2p.rocks/announce&tr=udp://opentracker.i2p.rocks:6969/announce&tr=udp://open.stealth.si:80/announce&tr=udp://open.tracker.cl:1337/announce&tr=udp://opentor.org:2710/announce&tr=udp://tracker.internetwarriors.net:1337/announce&tr=udp://tracker.leech.ie:1337/announce&tr=udp://tracker.moeking.me:6969/announce &tr=udp://tracker.openbittorrent.com:6969 &tr=udp://tracker.tiny-vps.com:6969/announce&tr=udp://tracker.torrent.eu.org:451&tr=wss://tracker.btorrent.xyz&tr=wss://tracker.openwebtorrent.com";
+    
+            // tid should start with magnet:?xt=urn:btih:
+            var tid = location.search.split('tid=')[1];
+            var tidEmpty = "Please enter a magnet link select from the sample videos";
+            var divOpen = "<center> <div id=\"papaya\" ";
+            var LNK = decodeURIComponent(tid);
+            var setLink = "data-link=\"" + LNK+ "\" ";
+            var divEnd = "data-status=\"true\" data-locale=\"ru\" data-height=\"540\" data-width=\"960\"> </div> </center>";
+            var code = unescape( divOpen + setLink + divEnd );
+            console.log(code);
+    
+            if (( tid == "" ) || ( tid == undefined )) {
+                document.getElementById('myCustomPlayerStatus').innerHTML = tidEmpty;
+            }
+            else {
+                document.getElementById('myCustomPlayer').innerHTML = code;
+            }
+        </script>
+	    <script src="https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js"></script>
   
-</body>
+    </body>
 </html>
