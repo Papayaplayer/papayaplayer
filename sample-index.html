@@ -3,17 +3,25 @@
 
         <title>Papaya Player</title>
 
-        <style>
-            html { background-color:#000000; color:#ffffff; font-family: 'Roboto', sans-serif;}
-            a, a:hover, a:active, a:visited { color: #ff0000; }
-            /* hide scrollbar but allow scrolling */
-            div { -ms-overflow-style: none; /* for Internet Explorer, Edge */ scrollbar-width: none; /* for Firefox */ overflow-y: scroll; }
-            div::-webkit-scrollbar { display: none; /* for Chrome, Safari, and Opera */ }
-            #header, #footer, #content { position:absolute; right:0; left:0; color:#ffffff; }
-            #header { height:100px; top:0; background: linear-gradient(180deg, #101010 0%, #000000 75%); }
-            #footer { height:100px; bottom:0; background: linear-gradient(180deg, #000000 0%, #101010 100%); text-align:right; }
-            #content { top:100px; bottom:100px; background:#000000; color:#ffffff; overflow:hidden; }
-            #content_inner { height:100%; overflow-x: hidden; }
+	<style>
+		html { background-color:#000000; color:#ffffff; font-family: 'Roboto', sans-serif;}
+		a, a:hover, a:active, a:visited { color: #ff0000; }
+		/* hide scrollbar but allow scrolling */
+		div { -ms-overflow-style: none; /* for Internet Explorer, Edge */ scrollbar-width: none; /* for Firefox */ overflow-y: scroll; }
+		div::-webkit-scrollbar { display: none; /* for Chrome, Safari, and Opera */ }
+		#header, #footer, #content { position:absolute; right:0; left:0; color:#ffffff; }
+		#header { height:100px; top:0; background: linear-gradient(180deg, #101010 0%, #000000 75%); }
+		#footer { height:100px; bottom:0; background: linear-gradient(180deg, #000000 0%, #101010 100%); text-align:right; }
+		#content { top:100px; bottom:100px; background:#000000; color:#ffffff; overflow:hidden; }
+		#content_inner { height:100%; overflow-x: hidden; }
+		/* Allows you to change the CSS of the status */
+		.status-video {
+			z-index: 0 !important;
+			color: #FFFFFF !important;
+			opacity: 1 !important;
+			position: static !important;
+			font-size: xx-small !important;
+		}
         </style>
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
