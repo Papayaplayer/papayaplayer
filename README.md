@@ -18,7 +18,7 @@ Don't worry, the player is designed so that if a separate server is blocked, the
 
 <h1>Features</h1>
 <ul>
-	<li><a>Supports magnet-uri and external torrent-files</a></li>
+	<li><a>Supports magnet-url and external torrent-files</a></li>
 	<li><a>Supports video (avi, mkv, mp4, m4v)</a></li>
 	<li><a>No additional plugins/extensions required</a></li>
 </ul>
