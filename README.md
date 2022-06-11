@@ -2,7 +2,19 @@
 Add Papayaplayer on your site for online torrent streaming
 
 <h1>General</h1>
-You can integrate Papaya player into your website and then your users will not only be able to download torrents, but also immediately watch them in the integrated player. Integration is very simple, for this you need to add just a few lines of code.
+Make your own internet-cinema.
+
+Add a few lines of code to your website and get:
+<ul>
+	<li><a>A player that plays torrent-videos like a regular video, without downloading to the device;</a></li>
+	<li><a>Search for the right videos on hundreds of integrated torrent-aggregators;</a></li>
+	<li><a>Add videos to favorites;</a></li>
+	<li><a>Browsing history.</a></li>
+</ul>
+![Fot instruction.jpg](https://user-images.githubusercontent.com/77d55ff726ee625a904055e30db6b5b2907c80eb/Fot%20instruction.jpg)
+
+In addition, you can add a video launch function next to the torrent download function:
+![First variants2 eng](https://user-images.githubusercontent.com/97943999/161525432-c344662d-79de-448e-aeae-e5bf2ba05f92.png)
 
 <h1>Anti-ban system</h1>
 Don't worry, the player is designed so that if a separate server is blocked, the new ones will “catch up” automatically, you won't have to do anything on the site for this. We have made the operation of the service uninterrupted and resistant to the banhammer.
@@ -15,11 +27,8 @@ Don't worry, the player is designed so that if a separate server is blocked, the
 </ul>
 
 <h1>How to use</h1>
-You have lists of torrents and a “download torrent" button. You can simply add a “play” button next to it:
+The code that allows you to run torrent files in the player through our service:
 
-![First variants2 eng](https://user-images.githubusercontent.com/97943999/161525432-c344662d-79de-448e-aeae-e5bf2ba05f92.png)
-
-That code allows you to run torrent-files in the player through our service:
 <pre class="hljs" style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(240, 240, 240); color: rgb(68, 68, 68);"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">head</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name" style="font-weight: 700;">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"https://github.com/Papayaplayer/papayaplayer/releases/download/v0.0.1/papaya.js"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"preload"</span> <span class="hljs-attr">as</span>=<span class="hljs-string" style="color: rgb(136, 0, 0);">"script"</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name" style="font-weight: 700;">head</span>&gt;</span>
@@ -33,3 +42,10 @@ That code allows you to run torrent-files in the player through our service:
 	<li>All parameters (height, width, link) are required!</li>
 	<li>Please, use all files from release catalog. Then, when you change the server, the service will continue to work.</li>
 </ul>
+
+<h1>How it works</h1>:
+	<li>the code in the header block - refers to github for a file that gives the current non-banned server addresses.</li>
+	<li>data-locate - allows you to configure the language. Now there are 2 of them, but there will be more in the future.</li>
+	<li>data-search - allows you to turn on and off the torrent aggregator search service.</li>
+	<li>data-height and data-width - allow you to set the height and width of the player window.</li>
+	<li>data-link - allows you to set the torrent “by default".</li>
