@@ -7,8 +7,8 @@ Add a few lines of code to your website and get:
 	<li><a>Search for the right videos on hundreds of integrated torrent-aggregators;</a></li>
 	<li><a>Add videos to favorites;</a></li>
 	<li><a>Browsing history.</a></li>
-</ul>
 ![For instruction](https://user-images.githubusercontent.com/97943999/173193949-de83753b-8d50-4fe3-8f49-eb5e14a78d03.png)
+</ul>
 
 In addition, you can add a video launch function next to the torrent download function:
 ![First variants2 eng](https://user-images.githubusercontent.com/97943999/161525432-c344662d-79de-448e-aeae-e5bf2ba05f92.png)
