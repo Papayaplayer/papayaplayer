@@ -11,7 +11,7 @@ Add a few lines of code to your website and get:
 	<li><a>Add videos to favorites;</a></li>
 	<li><a>Browsing history.</a></li>
 </ul>
-![Fot instruction.jpg](https://user-images.githubusercontent.com/77d55ff726ee625a904055e30db6b5b2907c80eb/Fot%20instruction.jpg)
+![Fot instruction.jpg](https://github.com/Papayaplayer/papayaplayer/blob/77d55ff726ee625a904055e30db6b5b2907c80eb/Fot%20instruction.jpg)
 
 In addition, you can add a video launch function next to the torrent download function:
 ![First variants2 eng](https://user-images.githubusercontent.com/97943999/161525432-c344662d-79de-448e-aeae-e5bf2ba05f92.png)
@@ -43,9 +43,9 @@ The code that allows you to run torrent files in the player through our service:
 	<li>Please, use all files from release catalog. Then, when you change the server, the service will continue to work.</li>
 </ul>
 
-<h1>How it works</h1>:
-	<li>the code in the header block - refers to github for a file that gives the current non-banned server addresses.</li>
-	<li>data-locate - allows you to configure the language. Now there are 2 of them, but there will be more in the future.</li>
-	<li>data-search - allows you to turn on and off the torrent aggregator search service.</li>
-	<li>data-height and data-width - allow you to set the height and width of the player window.</li>
-	<li>data-link - allows you to set the torrent “by default".</li>
+<h1>How it works</h1>
+	<li>the code in the <b>header</b> block - refers to github for a file that gives the current non-banned server addresses.</li>
+	<li><b>data-locate</b> - allows you to configure the language. Now there are 2 of them, but there will be more in the future.</li>
+	<li><b>data-search</b> - allows you to turn on and off the torrent aggregator search service.</li>
+	<li><b>data-height</b> and <b>data-width</b> - allow you to set the height and width of the player window.</li>
+	<li><b>data-link</b> - allows you to set the torrent “by default".</li>
