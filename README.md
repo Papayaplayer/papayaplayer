@@ -8,7 +8,7 @@ Add a few lines of code to your website and get:
 	<li><a>Add videos to favorites;</a></li>
 	<li><a>Browsing history.</a></li>
 </ul>
-![For instruction](Fot instruction.jpg)
+![For instruction](Fot%20instruction.jpg)
 
 In addition, you can add a video launch function next to the torrent download function:
 ![First variants2 eng](https://user-images.githubusercontent.com/97943999/161525432-c344662d-79de-448e-aeae-e5bf2ba05f92.png)
